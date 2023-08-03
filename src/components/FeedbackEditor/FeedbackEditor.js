@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 
 export default function FeedbackEditor ({onGoodFeedback,onNeutralFeedback,onBadFeedback}){
     return(
         <div className="feedback">
+            <h2>Please leave you feedback</h2>
            <div className="battonsList">
               <button type="button" className="button" onClick={onGoodFeedback}>good</button>
               <button type="button" className="button" onClick={onNeutralFeedback}>neutral</button>
@@ -11,4 +13,10 @@ export default function FeedbackEditor ({onGoodFeedback,onNeutralFeedback,onBadF
            </div>
         </div>
     )
+}
+
+FeedbackEditor.propTypes = {
+    onGoodFeedback:PropTypes.func.isRequired,
+    onNeutralFeedback:PropTypes.func.isRequired,
+    onBadFeedback:PropTypes.func.isRequired,
 }
